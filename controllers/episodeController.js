@@ -1,4 +1,3 @@
-const { where } = require('sequelize');
 const {Movie, Episode} = require('../models');
 
 class EpisodeController {

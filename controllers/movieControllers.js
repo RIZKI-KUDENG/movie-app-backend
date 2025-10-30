@@ -14,7 +14,7 @@ class movieController {
     }
   }
   static async getMovieById(req, res) {
-    try{
+    try {
       const movie = await Movie.findByPk(req.params.id, {
         include: {
           model: Episode,
@@ -22,39 +22,39 @@ class movieController {
         },
       });
       res.json(movie);
-    }catch(err){
+    } catch (err) {
       res.status(500).send(err);
     }
   }
   static async createMovie(req, res) {
-    try{
+    try {
       const movie = await Movie.create(req.body);
       res.json(movie);
-    }catch{
+    } catch {
       res.status(500).send(err);
     }
   }
   static async updateMovie(req, res) {
-    try{
+    try {
       const movie = await Movie.update(req.body, {
         where: {
           id: req.params.id,
         },
       });
       res.json(movie);
-    }catch{
+    } catch {
       res.status(500).send(err);
     }
   }
   static async deleteMovie(req, res) {
-    try{
+    try {
       const movie = await Movie.destroy({
         where: {
           id: req.params.id,
         },
       });
       res.json(movie);
-    }catch{
+    } catch {
       res.status(500).send(err);
     }
   }
