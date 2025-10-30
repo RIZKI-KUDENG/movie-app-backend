@@ -11,7 +11,6 @@ class authController {
           .status(400)
           .json({ message: "Username dan password wajib diisi" });
       }
-      console.log("📦 req.body:", req.body);
       const data = await user.create({
         username,
         password_hash: password,
